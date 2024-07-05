@@ -1,4 +1,4 @@
-.card {
+.basketcard {
     width: 45%;
     min-width: 350px;
     margin: 10px;
@@ -7,12 +7,12 @@
     border-radius: 10px;
     display: grid;
     grid-template-columns: 33% auto 33%;
-    grid-template-rows: repeat(4, 100px);
+    grid-template-rows: repeat(5, 100px);
     justify-items: center;
     align-items: center;
     
 
-    .card__image {
+    .basketcard__image {
         width: 300px;
         height: 200px;
         grid-column-start: 1;
@@ -21,7 +21,7 @@
         grid-row-end: 3;
     }
 
-    .card__title {
+    .basketcard__title {
         font-size: 30px;
         grid-column-start: 1;
         grid-column-end: 3;
@@ -32,7 +32,7 @@
         font-weight: bold;
     }
 
-    .card__cost {
+    .basketcard__cost {
         grid-column-start: 3;
         grid-column-end: 3;
         grid-row-start: 3;
@@ -42,17 +42,47 @@
         font-weight: 100;
     }
 
-    .card__tobusket {
-        max-width: 300px;
-        width: 90%;
+    // тут чутка говнокод :D, надо поменять TODO
+
+    .basketcard__decrement, .basketcard__encrement {
+        width: 60px;
         height: 60px;
         background-color: #D9D9D9;
         border: none;
-        border-radius: 10px;
-        grid-column-start: 1;
-        grid-column-end: 4;
-        grid-row-start: 4;
-        grid-row-end: 4;
+        border-radius: 20px;
         font-size: 25px;
+    }
+
+    .basketcard__decrement {
+        justify-self: left;
+    }
+
+    .basketcard__encrement {
+        justify-self: right;
+    }
+
+    .basketcard__quantity {
+        font-size: 25px;
+    }
+
+    .basketcard__total {
+        font-size: 30px;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 5;
+        grid-row-end: 5;
+        justify-self: left;
+        font-size: 25px;
+        font-weight: 100;
+    }
+
+    .basketcard__price {
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 5;
+        justify-self: right;
+        font-size: 25px;
+        font-weight: bold;
     }
 }
