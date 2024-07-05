@@ -3,9 +3,9 @@ import css from './css/card.module.css';
 export default function Card({ data }) {
   return (
     <div className={css.card}>
-      <h1 className={css.card__title}>{data.title}</h1>
+      <img src="" alt="" className={css.card__image} />
 
-      <p className={css.card__subtitle}>{data.subtitle}</p>
+      <h1 className={css.card__title}>{data.title}</h1>
 
       <span className={css.card__cost}>{data.cost}</span>
     </div>

@@ -15,8 +15,6 @@ export default function Shop() {
   return (
 
     <section className={css.shop}>
-      <h1 className={css.shop__title}>Catalog</h1>
-
         { shopList.map((el) => (
           <Card key={el.title} data={el} />
         ))}
