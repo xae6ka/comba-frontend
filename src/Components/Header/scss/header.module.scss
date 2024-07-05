@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  font-size: 24px;
+  font-weight: 100;
+  padding: 10px 50px 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .header__title {
+    font-size: 21px;
+    font-weight: 700;
+  }
+
+  .header_nav {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 180px;
+
+
+    .header__link {
+      font-weight: 100;
+      font-size: 15px;
+    }
+  }
+
+  .header__user {
+    width: 32px;
+  }
+
+  * {
+    color: #fff;
+  }
+}

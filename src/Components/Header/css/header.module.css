@@ -1,0 +1,29 @@
+.header {
+  width: 100%;
+  font-size: 24px;
+  font-weight: 100;
+  padding: 10px 50px 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header__title {
+  font-size: 21px;
+  font-weight: 700;
+}
+.header .header_nav {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 180px;
+}
+.header .header_nav .header__link {
+  font-weight: 100;
+  font-size: 15px;
+}
+.header .header__user {
+  width: 32px;
+}
+.header * {
+  color: #fff;
+}/*# sourceMappingURL=header.module.css.map */
