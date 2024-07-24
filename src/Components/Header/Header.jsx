@@ -6,7 +6,9 @@ import user from './../../images/user.png';
 export default function Header() {
   return (
     <header className={css.header}>
-      <h1 className={css.header__title}>COMBA</h1>
+      <Link to="/" className={css.header__title}>
+        COMBA
+      </Link>
 
       <nav className={css.header_nav}>
         <Link to="/" className={css.header__link}>
