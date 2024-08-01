@@ -1,0 +1,68 @@
+.login {
+  display: flex;
+  margin-top: 80px;
+  width: 80%;
+  max-width: 1400px;
+  height: 400px;
+}
+.login .login__reg,
+.login .login__login {
+  display: flex;
+  width: 50%;
+}
+.login .login__login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #d9d9d9;
+}
+.login .login__login .login__input,
+.login .login__login .login__btn {
+  width: 80%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: #9e9e9e;
+  transition: all 0.2s ease;
+}
+.login .login__login .login__input:focus,
+.login .login__login .login__btn:focus {
+  border: #27e0e3 5px solid;
+}
+.login .login__login .login__input::-moz-placeholder, .login .login__login .login__btn::-moz-placeholder {
+  color: #fff;
+  padding: 20px;
+  font-weight: 200;
+  font-size: 20px;
+}
+.login .login__login .login__input::placeholder,
+.login .login__login .login__btn::placeholder {
+  color: #fff;
+  padding: 20px;
+  font-weight: 200;
+  font-size: 20px;
+}
+.login .login__login .login__btn {
+  width: 60%;
+  height: 40px;
+  color: #fff;
+  font-size: 25px;
+}
+.login .login__reg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #342e2e;
+}
+.login .login__reg .reg__span {
+  color: #fff;
+  font-weight: 100;
+  font-size: 20px;
+}
+.login .login__reg .reg__link {
+  color: #27e0e3;
+  font-size: 30px;
+  margin-top: 10px;
+}/*# sourceMappingURL=login.module.css.map */

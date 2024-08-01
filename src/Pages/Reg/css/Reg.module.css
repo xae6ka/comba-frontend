@@ -1,0 +1,68 @@
+.reg {
+  display: flex;
+  margin-top: 80px;
+  width: 80%;
+  max-width: 1400px;
+  height: 400px;
+}
+.reg .reg__reg,
+.reg .reg__login {
+  display: flex;
+  width: 50%;
+}
+.reg .reg__reg {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #d9d9d9;
+}
+.reg .reg__reg .reg__input,
+.reg .reg__reg .reg__btn {
+  width: 80%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: #9e9e9e;
+  transition: all 0.2s ease;
+}
+.reg .reg__reg .reg__input:focus,
+.reg .reg__reg .reg__btn:focus {
+  border: #27e0e3 5px solid;
+}
+.reg .reg__reg .reg__input::-moz-placeholder, .reg .reg__reg .reg__btn::-moz-placeholder {
+  color: #fff;
+  padding: 20px;
+  font-weight: 200;
+  font-size: 20px;
+}
+.reg .reg__reg .reg__input::placeholder,
+.reg .reg__reg .reg__btn::placeholder {
+  color: #fff;
+  padding: 20px;
+  font-weight: 200;
+  font-size: 20px;
+}
+.reg .reg__reg .reg__btn {
+  width: 60%;
+  height: 40px;
+  color: #fff;
+  font-size: 25px;
+}
+.reg .reg__login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #342e2e;
+}
+.reg .reg__login .login__span {
+  color: #fff;
+  font-weight: 100;
+  font-size: 20px;
+}
+.reg .reg__login .login__link {
+  color: #27e0e3;
+  font-size: 30px;
+  margin-top: 10px;
+}/*# sourceMappingURL=Reg.module.css.map */

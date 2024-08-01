@@ -9,6 +9,7 @@ table {border-collapse: collapse;border-spacing: 0;}
 a {text-decoration: none;}
 
 *, body {
+    input:focus{ outline:none; }
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
     font-family: "JetBrains Mono", monospace;
@@ -21,6 +22,7 @@ a {text-decoration: none;}
     flex-direction: column;
     align-items: center;
 }
+
 
 
 //импортим шрифт(желательно перести в другой файл TODO)
