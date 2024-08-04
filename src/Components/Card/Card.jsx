@@ -8,7 +8,7 @@ export default function Card({ data }) {
     <div className={css.card}>
       <img src={image} alt="" className={css.card__image} />
 
-      <h1 className={css.card__title}>{data.title}</h1>
+      <h1 className={css.card__title}>{data.header}</h1>
 
       <span className={css.card__cost}>{data.cost}$</span>
 

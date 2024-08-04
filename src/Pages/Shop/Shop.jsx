@@ -7,7 +7,7 @@ export default function Shop() {
   const [shopList, setShopList] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/')
+    fetch('http://server/cloth/getall')
       .then((response) => response.json())
       .then((data) => setShopList(data));
   });

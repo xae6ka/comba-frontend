@@ -23,7 +23,7 @@ export default function Card({ data }) {
     <div className={css.basketcard}>
       <img src={image} alt="" className={css.basketcard__image} />
 
-      <h1 className={css.basketcard__title}>{data.title}</h1>
+      <h1 className={css.basketcard__title}>{data.header}</h1>
 
       <span className={css.basketcard__cost}>{data.cost}$</span>
 
