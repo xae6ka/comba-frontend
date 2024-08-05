@@ -5,9 +5,10 @@ import BasketCard from '../../Components/BasketCard/BasketCard';
 
 export default function Basket() {
   const [shopList, setShopList] = useState([]);
+  const id = 1;
 
   useEffect(() => {
-    fetch('http://localhost:8080/busket')
+    fetch(`http://server/basket/getone?userid=${id}`)
       .then((response) => response.json())
       .then((data) => setShopList(data));
   });

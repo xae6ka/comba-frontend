@@ -5,7 +5,7 @@ import { useState } from 'react';
 import image from '../../images/test2.png';
 
 export default function Card({ data }) {
-  const [count, setCount] = useState(data.count);
+  const [count, setCount] = useState(Number(data.count));
 
   function decrement() {
     if (count > 1) {
