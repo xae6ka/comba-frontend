@@ -4,6 +4,10 @@ import css from './css/card.module.css';
 import image from '../../images/test1.png';
 
 export default function Card({ data }) {
+  const addToBusket = () => {
+    console.log('TODO CREATE ADD TO BUSKET FUNCTION')
+  };
+
   return (
     <div className={css.card}>
       <img src={image} alt="" className={css.card__image} />
@@ -12,7 +16,7 @@ export default function Card({ data }) {
 
       <span className={css.card__cost}>{data.cost}$</span>
 
-      <button className={css.card__tobusket}>
+      <button onClick={addToBusket} className={css.card__tobusket}>
         Add To Busket
       </button>
     </div>
