@@ -22,7 +22,7 @@ export default function Login() {
 
     GetUserByName();
 
-    if (data[0] && data[0].login == login && data[0].pass == password) {
+    if (data[0] && data[0].login.toLowerCase() == login.toLowerCase() && data[0].pass == password) {
       localStorage.setItem('id', data[0].id);
       localStorage.setItem('login', login);
       localStorage.setItem('password', password);

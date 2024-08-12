@@ -1,7 +1,6 @@
 import css from './css/basketcard.module.css';
 import { useState } from 'react';
 
-//test
 import image from '../../images/test2.png';
 
 export default function Card({ data }) {
@@ -10,6 +9,12 @@ export default function Card({ data }) {
   function decrement() {
     if (count > 1) {
       setCount(count - 1);
+    } else {
+      fetch(
+        `http://server/basket/deleteone?busketid=${localStorage.getItem(
+          'id'
+        )}&clothid=${data.articul}`
+      ).then((response) => response.json())
     }
   }
 
@@ -27,15 +32,19 @@ export default function Card({ data }) {
 
       <span className={css.basketcard__cost}>{data.cost}$</span>
 
-      <button className={css.basketcard__decrement} onClick={decrement}>-</button>
+      <button className={css.basketcard__decrement} onClick={decrement}>
+        -
+      </button>
 
       <span className={css.basketcard__quantity}>Count: {count}</span>
 
-      <button className={css.basketcard__encrement} onClick={increment}>+</button>
+      <button className={css.basketcard__encrement} onClick={increment}>
+        +
+      </button>
 
       <span className={css.basketcard__total}>Total:</span>
 
-      <span className={css.basketcard__price}>{ count * data.cost }$</span>
+      <span className={css.basketcard__price}>{count * data.cost}$</span>
     </div>
   );
 }

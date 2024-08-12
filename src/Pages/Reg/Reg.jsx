@@ -10,7 +10,9 @@ export default function Reg() {
 
   const [data, setData] = useState([]);
 
-  const reg = () => {
+  const reg = (e) => {
+    e.preventDefault();
+
     fetch(
       `http://server/users/addone?login=${login}&pass=${password}&email=${email}`
     )

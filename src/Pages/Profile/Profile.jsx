@@ -1,4 +1,13 @@
+import { Link } from 'react-router-dom';
+
 export default function Profile() {
+  const resetCookie = () => {
+    localStorage.setItem('id', '');
+    localStorage.setItem('login', '');
+    localStorage.setItem('password', '');
+    localStorage.setItem('email', '');
+  };
+
   if (localStorage.getItem('password')) {
     return (
       <section>
@@ -6,13 +15,17 @@ export default function Profile() {
         <span>{localStorage.getItem('login')}</span>
 
         <p>{localStorage.getItem('email')}</p>
+
+        <button onClick={resetCookie}>Logout</button>
       </section>
-    )
+    );
   }
 
   return (
     <section>
-      <h1>No Data</h1>
+      <Link to="/reg">Reg</Link>
+
+      <Link to="/login">Login</Link>
     </section>
   );
 }

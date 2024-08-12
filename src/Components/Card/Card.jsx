@@ -5,7 +5,8 @@ import image from '../../images/test1.png';
 
 export default function Card({ data }) {
   const addToBusket = () => {
-    console.log('TODO CREATE ADD TO BUSKET FUNCTION')
+    fetch(`http://server/basket/addone?userid=${localStorage.getItem('id')}&clothid=${data.id}`)
+      .then((response) => response.json())
   };
 
   return (
