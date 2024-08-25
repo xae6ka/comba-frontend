@@ -7,13 +7,15 @@ import Login from './Pages/Login/Login';
 import Reg from './Pages/Reg/Reg';
 import { Route, Routes } from 'react-router-dom';
 
+import { ReactNotifications } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
+
 import './css/index.css';
 
 function App() {
   return (
     <div className="App">
       <Header />
-
 
       <Routes>
         <Route exact path="/" element={<Main />} />
@@ -23,6 +25,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/reg" element={<Reg />} />
       </Routes>
+      
+      <ReactNotifications />
     </div>
   );
 }

@@ -1,25 +1,19 @@
 import { Link } from 'react-router-dom';
 import css from './css/Reg.module.css';
 
+import { regUser } from '../../axios/axios';
+
 import { useState } from 'react';
 
 export default function Reg() {
-  const [login, setLogin] = useState([]);
-  const [password, setPassword] = useState([]);
-  const [email, setEmail] = useState([]);
-
-  const [data, setData] = useState([]);
+  const [login, setLogin] = useState();
+  const [password, setPassword] = useState();
+  const [email, setEmail] = useState();
 
   const reg = (e) => {
     e.preventDefault();
 
-    fetch(
-      `http://server/users/addone?login=${login}&pass=${password}&email=${email}`
-    )
-      .then((response) => response.json())
-      .then((data) => setData(data));
-
-    console.log(data);
+    regUser(login, password, email);
   };
 
   return (

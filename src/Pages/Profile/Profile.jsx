@@ -6,6 +6,8 @@ export default function Profile() {
     localStorage.setItem('login', '');
     localStorage.setItem('password', '');
     localStorage.setItem('email', '');
+
+    window.location.href = '/';
   };
 
   if (localStorage.getItem('password')) {

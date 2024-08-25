@@ -1,32 +1,27 @@
 import { Link } from 'react-router-dom';
 import css from './css/login.module.css';
+import { getUser } from '../../axios/axios';
 
 import { useState } from 'react';
 
 export default function Login() {
-  const [login, setLogin] = useState([]);
-  const [password, setPassword] = useState([]);
+  const [login, setLogin] = useState();
+  const [password, setPassword] = useState();
 
   const [data, setData] = useState([]);
 
-  const GetUserByName = () => {
-    fetch(
-      `http://server/users/getonebylogin?userlogin=${login}`
-    )
-      .then((response) => response.json())
-      .then((data) => setData(data));
-  };
-
-  const loginBtn = (e) => {
+  const loginBtn = async (e) => {
     e.preventDefault();
 
-    GetUserByName();
+    setData(await getUser(login));
 
-    if (data[0] && data[0].login.toLowerCase() == login.toLowerCase() && data[0].pass == password) {
+    if (data[0] && data[0].login.toLowerCase() === login.toLowerCase() && data[0].pass === password) {
       localStorage.setItem('id', data[0].id);
       localStorage.setItem('login', login);
       localStorage.setItem('password', password);
       localStorage.setItem('email', data[0].email);
+
+      window.location.href = '/';
     }
   };
 

@@ -2,11 +2,11 @@ import css from './css/card.module.css';
 
 //test
 import image from '../../images/test1.png';
+import { addToBasket } from '../../axios/axios';
 
 export default function Card({ data }) {
   const addToBusket = () => {
-    fetch(`http://server/basket/addone?userid=${localStorage.getItem('id')}&clothid=${data.id}`)
-      .then((response) => response.json())
+    addToBasket(data);
   };
 
   return (

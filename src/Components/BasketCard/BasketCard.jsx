@@ -19,7 +19,7 @@ export default function Card({ data }) {
   }
 
   function increment() {
-    if (count < 100) {
+    if (count <= 100) {
       setCount(count + 1);
     }
   }
