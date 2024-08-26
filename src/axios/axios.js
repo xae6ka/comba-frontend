@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ReactNotifications, Store } from 'react-notifications-component';
+import { Store } from 'react-notifications-component';
 
 const addNotification = (title, message, type) => {
   Store.addNotification({

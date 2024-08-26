@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 
 export default function Profile() {
   const resetCookie = () => {
@@ -24,10 +25,18 @@ export default function Profile() {
   }
 
   return (
-    <section>
-      <Link to="/reg">Reg</Link>
+    <Card data-bs-theme="dark" style={{ width: '18rem', backgroundColor: '#3a3a3a' }}>
+      <Card.Body>
+        <Card.Title>Hello!</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">Please login or register and buy another things!</Card.Subtitle>
 
-      <Link to="/login">Login</Link>
-    </section>
+        <Link class="card-link" to="/reg">
+          Register
+        </Link>
+        <Link class="card-link" to="/login">
+          Login
+        </Link>
+      </Card.Body>
+    </Card>
   );
 }
