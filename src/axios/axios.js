@@ -77,7 +77,7 @@ export const getCloth = async () => {
 
     return data;
   } catch (error) {
-    return `error: ${error}`;
+    console.log(`error: ${error}`);
   }
 };
 
