@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import css from './css/login.module.css';
 import { getUser } from '../../axios/axios';
 
+import { addNotification } from '../../Notifications/notifications';
+
 import { useState } from 'react';
 
 export default function Login() {
@@ -14,14 +16,35 @@ export default function Login() {
     e.preventDefault();
 
     setData(await getUser(login));
-
-    if (data[0] && data[0].login.toLowerCase() === login.toLowerCase() && data[0].pass === password) {
+    if (!login) {
+      addNotification(
+        'Ошибка при попытке входа!',
+        'Вы не ввели логин',
+        'warning'
+      );
+    } else if (!password) {
+      addNotification(
+        'Ошибка при попытке входа!',
+        'Вы не ввели пароль',
+        'warning'
+      );
+    } else if (
+      data[0] &&
+      data[0].login.toLowerCase() === login.toLowerCase() &&
+      data[0].pass === password
+    ) {
       localStorage.setItem('id', data[0].id);
       localStorage.setItem('login', login);
       localStorage.setItem('password', password);
       localStorage.setItem('email', data[0].email);
 
       window.location.href = '/';
+    } else {
+      addNotification(
+        'Ошибка при попытке входа!',
+        'Вы неправильно ввели логин или пароль',
+        'warning'
+      );
     }
   };
 

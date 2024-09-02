@@ -1,21 +1,5 @@
 import axios from 'axios';
-import { Store } from 'react-notifications-component';
-
-const addNotification = (title, message, type) => {
-  Store.addNotification({
-    title: title,
-    message: message,
-    type: type,
-    insert: 'top',
-    container: 'top-right',
-    animationIn: ['animate__animated', 'animate__fadeIn'],
-    animationOut: ['animate__animated', 'animate__fadeOut'],
-    dismiss: {
-      duration: 5000,
-      onScreen: true,
-    },
-  });
-};
+import { addNotification } from '../Notifications/notifications';
 
 axios.defaults.baseURL = 'http://server/';
 
@@ -107,6 +91,8 @@ export const addToBasket = async (card) => {
       );
     } else {
       addNotification(`Товар ${card.header} Успешно добавлен в корзину`, null, 'success');
+
+      window.location.replace('/basket');
     }
   } catch (error) {
     return `error: ${error}`;

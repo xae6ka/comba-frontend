@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 export default function Profile() {
   const resetCookie = () => {
@@ -14,21 +15,29 @@ export default function Profile() {
   if (localStorage.getItem('password')) {
     return (
       <section>
-        <h1>{localStorage.getItem('id')}</h1>
-        <span>{localStorage.getItem('login')}</span>
-
-        <p>{localStorage.getItem('email')}</p>
-
-        <button onClick={resetCookie}>Logout</button>
+        <Card data-bs-theme="dark" style={{ width: '18rem' }}>
+          <Card.Body>
+            <Card.Title>{localStorage.getItem('id')} | {localStorage.getItem('login')}</Card.Title>
+            <Card.Text>
+            {localStorage.getItem('email')}
+            </Card.Text>
+            <Button variant="primary" style={{marginTop: '10px'}} onClick={resetCookie}>Logout</Button>
+          </Card.Body>
+        </Card>
       </section>
     );
   }
 
   return (
-    <Card data-bs-theme="dark" style={{ width: '18rem', backgroundColor: '#3a3a3a' }}>
+    <Card
+      data-bs-theme="dark"
+      style={{ width: '18rem', backgroundColor: '#3a3a3a' }}
+    >
       <Card.Body>
         <Card.Title>Hello!</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Please login or register and buy another things!</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">
+          Please login or register and buy another things!
+        </Card.Subtitle>
 
         <Link class="card-link" to="/reg">
           Register

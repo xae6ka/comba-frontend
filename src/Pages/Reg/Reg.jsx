@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom';
 import css from './css/Reg.module.css';
 
-import { regUser } from '../../axios/axios';
+import { addNotification } from '../../Notifications/notifications';
 
+import { regUser } from '../../axios/axios';
 import { useState } from 'react';
+
+const Notification = (msg) => {
+  addNotification('Ошибка при попытке регистрации!', msg, 'warning');
+};
 
 export default function Reg() {
   const [login, setLogin] = useState();
@@ -13,7 +18,15 @@ export default function Reg() {
   const reg = (e) => {
     e.preventDefault();
 
-    regUser(login, password, email);
+    if (!login) {
+      Notification('Вы не ввели логин');
+    } else if (!password) {
+      Notification('Вы не ввели пароль');
+    } else if (!email) {
+      Notification('Вы не ввели почту');
+    } else {
+      regUser(login, password, email);
+    }
   };
 
   return (
