@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { addNotification } from '../Notifications/notifications';
 
-axios.defaults.baseURL = 'http://server/';
+axios.defaults.baseURL = 'http://a1038800.xsph.ru/server/';
 
 export const regUser = async (login, password, email) => {
   try {
@@ -91,9 +91,41 @@ export const addToBasket = async (card) => {
       );
     } else {
       addNotification(`Товар ${card.header} Успешно добавлен в корзину`, null, 'success');
-
-      window.location.replace('/basket');
     }
+  } catch (error) {
+    return `error: ${error}`;
+  }
+};
+
+// cloth
+
+export const deleteCLoth = async (card) => {
+  try {
+    const { data } = await axios.get(
+      `shop/deleteone&clothid=${card.id}`
+    );
+
+    if (!data) {
+      addNotification(
+        'Ошибка!',
+        `Товар ${card.header} не удален`,
+        'danger'
+      );
+    } else {
+      addNotification(`Товар ${card.header} Успешно удален`, null, 'success');
+    }
+  } catch (error) {
+    return `error: ${error}`;
+  }
+};
+
+export const addCloth = async (card) => {
+  try {
+    const { data } = await axios.get(
+      `shop/addcloth?header=${card.header}&cost=${card.cost}`
+    );
+
+    return data;
   } catch (error) {
     return `error: ${error}`;
   }

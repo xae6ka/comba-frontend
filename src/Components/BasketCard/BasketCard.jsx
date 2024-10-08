@@ -11,7 +11,7 @@ export default function Card({ data }) {
       setCount(count - 1);
     } else {
       fetch(
-        `http://server/basket/deleteone?busketid=${localStorage.getItem(
+        `http://a1038800.xsph.ru/server/basket/deleteone?busketid=${localStorage.getItem(
           'id'
         )}&clothid=${data.articul}`
       ).then((response) => response.json())

@@ -5,6 +5,7 @@ import Basket from './Pages/Basket/Basket';
 import Profile from './Pages/Profile/Profile';
 import Login from './Pages/Login/Login';
 import Reg from './Pages/Reg/Reg';
+import Admin from './Pages/Admin/Admin';
 import { Route, Routes } from 'react-router-dom';
 
 import { ReactNotifications } from 'react-notifications-component';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reg" element={<Reg />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       
       <ReactNotifications />

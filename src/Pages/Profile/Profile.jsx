@@ -17,13 +17,29 @@ export default function Profile() {
       <section>
         <Card data-bs-theme="dark" style={{ width: '18rem' }}>
           <Card.Body>
-            <Card.Title>{localStorage.getItem('id')} | {localStorage.getItem('login')}</Card.Title>
-            <Card.Text>
-            {localStorage.getItem('email')}
-            </Card.Text>
-            <Button variant="primary" style={{marginTop: '10px'}} onClick={resetCookie}>Logout</Button>
+            <Card.Title>
+              {localStorage.getItem('id')} | {localStorage.getItem('login')}
+            </Card.Title>
+            <Card.Text>{localStorage.getItem('email')}</Card.Text>
+            <Button
+              variant="primary"
+              style={{ marginTop: '10px' }}
+              onClick={resetCookie}
+            >
+              Logout
+            </Button>
           </Card.Body>
         </Card>
+
+        {localStorage.getItem('login') === 'admin' ? (
+          <div style={{margin: '20px auto 0 37%'}}>
+            <Link to="/admin" style={{ color: 'white' }}>
+              /admin
+            </Link>
+          </div>
+        ) : (
+          false
+        )}
       </section>
     );
   }
